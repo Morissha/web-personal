@@ -1,0 +1,407 @@
+/* Animasi fade-in bio-text */
+@keyframes fadeInBio {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Awalnya sembunyi */
+.bio-text h3, 
+.bio-text p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInBio 2s forwards;
+    animation-play-state: paused; /* Pause dulu, jalan pas scroll */
+}
+
+/* Kalau mau animasi jalan */
+.bio-text h3.animate, 
+.bio-text p.animate {
+    animation-play-state: running;
+}
+
+/* Reset bawaan browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Scroll Halus */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 50px;
+    z-index: 10;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInNavbar 2s forwards;
+}
+
+/* Header setelah discroll */
+header.scrolled {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    border-radius: 0;
+    height: 80px;
+    padding: 0 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 24px;
+    text-align: left;
+    flex: 1;
+}
+
+/* Navbar */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInNavbar 2s forwards;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover dan klik efek */
+nav ul li a:hover {
+    background-color: #00bcd4;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+nav ul li a:active {
+    background-color: #019ca6;
+    transform: scale(0.95);
+}
+
+/* Hamburger Menu */
+#burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#burger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+/* Untuk video */
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Untuk gambar fallback */
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Overlay gelap */
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Teks di atas foto/video */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.hero-text h {
+    font-family: 'Cal Sans', sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.hero-text h2 {
+    font-family: 'Cal Sans', sans-serif;
+    font-size: 70px;
+    margin-bottom: -20px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.hero-text h2:last-of-type {
+    font-family: 'Cal Sans', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: -10px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+/* Animasi fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi blink */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Terapkan animasi blink ke hero-text */
+.hero-text h, 
+.hero-text h2 {
+    animation: fadeIn 5s forwards, blink 4s infinite;
+    -webkit-animation: fadeIn 5s forwards, blink 4s infinite;
+}
+
+/* Animasi fade-in navbar */
+@keyframes fadeInNavbar {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi fade-in foto profil */
+@keyframes fadeInProfile {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Biodata Section */
+.biodata {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    border-bottom: 3px solid #000;
+}
+
+.biodata-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Profile Pic dengan animasi */
+.profile-pic img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #333;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInProfile 2s forwards;
+    animation-play-state: paused;
+}
+
+.profile-pic img.animate {
+    animation-play-state: running;
+}
+
+/* Bio Text */
+.bio-text {
+    flex: 1;
+}
+
+.bio-text h3 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.bio-text p {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* Box Section */
+.boxes {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 60px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+/* Animasi fade-in untuk box */
+@keyframes fadeInBox {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Awalnya sembunyi */
+.box {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInBox 2s forwards;
+    animation-play-state: paused; /* Pause dulu, jalan pas scroll */
+}
+
+/* Kalau mau animasi jalan */
+.box.animate {
+    animation-play-state: running;
+}
+
+.box {
+    background-color: #050505;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 0 0 45%;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.box h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.logo-box img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Button for "Lihat Tugas Saya" */
+.task-button {
+    background-color: #ec1f1f;
+    color: white;
+    padding: 8px 8px;
+    border: none;
+   
+}

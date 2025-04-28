@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Pribadi</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>Morissha</h1>
+      </div>
+      <nav>
+        <div class="burger-menu" id="burger-menu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <ul id="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="Daftartugas.html">Tugas</a></li>
+          <li><a href="#">Project</a></li>
+          <li><a href="#biodata">About me</a></li>
+          <li><a href="contacus.html">Contact us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline>
+      <source src="video/videomu.mp4" type="video/mp4">
+      Browser kamu tidak mendukung video.
+    </video>
+    
+    <!-- Fallback Gambar -->
+    <img src="image/596c9be35c765.jpg" alt="Foto Besar">
+
+    <div class="overlay"></div>
+
+    <div class="hero-text">
+      <h class="fade-in">MORISSHA (20303010076)</h>
+      <h2 class="fade-in">INFORMATIKA 23D</h2>
+      <h2 class="fade-in">UNIVERSITAS PERJUANGAN</h2>
+    </div>
+  </section>
+
+  <!-- Biodata Section -->
+  <section id="biodata" class="biodata">
+    <div class="biodata-container">
+      <div class="profile-pic">
+        <img src="image/WhatsApp Image 2025-04-27 at 12.15.30_318a3091.jpg" alt="Foto Profil">
+      </div>
+      <div class="bio-text">
+        <h3>Tentang saya</h3>
+        <!-- Menambahkan garis horizontal -->
+        <hr class="garis-bawah">
+
+        <p>Saya adalah morissha mahasiswa teknik informatika yang masih banyak mencari tahu atau memperdalam ilmu tersebut dan masih mencari solusi dari sebuah masalah yang ada, dan jadikanlah hinaan dan sakit hati sebagai motivasi untuk menjadi yang lebih baik lagi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tugas & About Me Section -->
+  <section id="tugas" class="boxes">
+    <div class="box tugas-box">
+      <div class="logo-box">
+        <!-- Logo Tugas -->
+        <img src="image/to-do-list.png" alt="Logo Tugas">
+      </div>
+      <h3>Tugas</h3>
+      <button class="task-button" onclick="window.location.href='Daftartugas.html'">Lihat Tugas Saya</button>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Morissha</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

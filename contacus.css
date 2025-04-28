@@ -1,0 +1,157 @@
+/* Reset bawaan browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Membuat body mengambil minimal tinggi layar */
+}
+
+/* Animasi Slide-in dari Atas */
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px); /* Mulai dari atas */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Akhirnya di posisi normal */
+    }
+}
+
+/* Animasi Fade-in untuk Box Tugas */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header */
+header {
+    background-color: #000000; /* Warna background hitam */
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    animation: slideInFromTop 1s ease-out; /* Menambahkan animasi slide-in dari atas */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .logo h1 {
+    font-size: 28px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    animation: slideInFromTop 1s ease-out; /* Menambahkan animasi slide-in pada navbar */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #00bcd4;
+    border-radius: 5px;
+}
+
+/* Konten Contact Us */
+.contact-info {
+    padding: 50px 20px;
+    text-align: center;
+    flex-grow: 1; /* Membuat konten mengambil sisa ruang */
+}
+
+.contact-info h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    animation: fadeIn 1s ease-out; /* Animasi fade-in pada judul */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeIn 1s ease-out; /* Animasi fade-in pada ikon sosial media */
+}
+
+.social-icon {
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards; /* Menambahkan fade-in untuk setiap ikon */
+}
+
+.social-icon:nth-child(1) {
+    animation-delay: 0.2s; /* Delay animasi untuk memberi jarak antar ikon */
+}
+
+.social-icon:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.social-icon:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.social-icon:hover {
+    color: #00bcd4;
+}
+
+.social-icon i {
+    margin-right: 10px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Pastikan footer berada di bawah */
+    animation: fadeInFooter 1s ease-out; /* Animasi fade-in untuk footer */
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Animasi Fade-in untuk Footer */
+@keyframes fadeInFooter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
