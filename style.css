@@ -403,5 +403,114 @@ footer p {
     color: white;
     padding: 8px 8px;
     border: none;
-   
 }
+
+/* Mengatur agar elemen container menggunakan lebar 100% */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Cal Sans', sans-serif;
+}
+
+/* Header responsif */
+header {
+    background-color: #333;
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    color: #00bcd4;
+}
+
+/* Style mobile */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    #burger-menu {
+        display: block;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
+/* === Hamburger menu default (disembunyikan di desktop) === */
+#burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  #burger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+  }
+  
+  /* Responsive: Tampilkan burger menu & sembunyikan nav di mobile */
+  @media (max-width: 768px) {
+    #burger-menu {
+      display: flex;
+    }
+  
+    #nav-list {
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background-color: black;
+      flex-direction: column;
+      width: 200px;
+      border-radius: 10px;
+      padding: 10px;
+      z-index: 1000;
+    }
+  
+    #nav-list.active {
+      display: flex;
+    }
+  
+    #nav-list li {
+      margin: 10px 0;
+      text-align: center;
+    }
+  }
+  
